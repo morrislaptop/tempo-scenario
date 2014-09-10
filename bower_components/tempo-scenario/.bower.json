@@ -1,0 +1,36 @@
+{
+  "name": "tempo-scenario",
+  "authors": [
+    {
+      "name": "Ben Godfrey",
+      "email": "ben.godfrey@wonga.com"
+    }
+  ],
+  "description": "Tools for managing mock data scenarios in AngularJS applications",
+  "main": "js/tempo-scenario.min.js",
+  "private": true,
+  "devDependencies": {
+    "angular-mocks": "~1.2.0",
+    "angular-ui-router": "0.2.0"
+  },
+  "ignore": [
+    "**/.*",
+    "tasks"
+  ],
+  "dependencies": {
+    "angular": "~1.2.0",
+    "angular-resource": "~1.2.0",
+    "angular-ui-utils": "~0.0.4",
+    "lodash": "*"
+  },
+  "homepage": "https://github.com/morrislaptop/tempo-scenario",
+  "_release": "f5be5214e6",
+  "_resolution": {
+    "type": "branch",
+    "branch": "queue-response",
+    "commit": "f5be5214e6310b8001bda2834fa0763994173ba6"
+  },
+  "_source": "git@github.com:morrislaptop/tempo-scenario.git",
+  "_target": "queue-response",
+  "_originalSource": "git@github.com:morrislaptop/tempo-scenario.git"
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "httpMethod": "GET",
+    "statusCode": 204,
+    "retry-after": 5
+  },
+  {
+    "httpMethod": "GET",
+    "statusCode": 200,
+    "response": {
+      "Authorisation": [
+        {
+          "authorisationId": "99d18af8",
+          "provider": "Xero",
+          "status": "HealthChecking"
+        }
+      ]
+    }
+  },
+  {
+    "httpMethod": "GET",
+    "statusCode": 200,
+    "response": {
+      "_embedded": {
+        "Authorisation": [
+          {
+            "authorisationId": "a1e8ca6420fa",
+            "provider": "Xero",
+            "status": "Created"
+          }
+        ]
+      }
+    }
+  }
+]

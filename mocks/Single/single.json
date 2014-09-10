@@ -1,0 +1,16 @@
+{
+  "httpMethod": "GET",
+  "statusCode": 200,
+  "response": {
+    "_embedded": {
+      "ApiProvider": [
+        {
+          "apiProviderId": "FreeAgent"
+        },
+        {
+          "apiProviderId": "Xero"
+        }
+      ]
+    }
+  }
+}

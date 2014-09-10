@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tempo Scenario</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/tempo-scenario/app/src/js/scenario.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="mocks/scenarioData.js"></script>
+    <script>
+        var app = angular
+          .module('demo', ['scenario', 'ngMockE2E'])
+
+          .controller('demoCtrl', [
+              '$scope',
+              '$http',
+              function (scope, $http) {
+                scope.makeRequest = function (rel) {
+                  $http.get('http://wongatech.github.io/tempo-scenario/' + rel).then(function (r) {
+                    var json = JSON.stringify(r, null, 2);
+                    var pre = angular.element('<pre>' + json + '</pre>');
+                    angular.element('.log').prepend(pre);
+                  });
+                }
+              }
+          ]);
+    </script>
+
+    <style>
+        .flyover .alert {
+            left: 50%;
+            top: 50%;
+            position: fixed;
+            z-index: 1050;
+        }
+
+        .flyover .mask {
+            top: 0;
+            left: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            background: black;
+            z-index: 1049;
+        }
+
+        code {
+            margin: 2em;
+            padding: 0.5em;
+            display: block;
+            background-color: #008fd5;
+            color: white;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="page-header">
+    <div class="media">
+        <a class="pull-left" href="#">
+            <img src="logo.png" width="100">
+        </a>
+
+        <div class="media-body">
+            <h1 class="text-muted">Tempo Scenario</h1>
+
+            <p>
+                <img src="https://travis-ci.org/wongatech/angular-http-loader.svg?branch=master">
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="">
+    <p class="lead">
+        Tools for managing mock data scenarios in AngularJS applications.
+    </p>
+
+    <p class="text-center">
+        <iframe src="http://ghbtns.com/github-btn.html?user=wongatech&repo=angular-scenario&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="110" height="20"></iframe>
+        <iframe src="http://ghbtns.com/github-btn.html?user=wongatech&repo=angular-scenario&type=fork&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="110" height="20"></iframe>
+        <iframe src="http://ghbtns.com/github-btn.html?user=wongatech&repo=angular-scenario&type=follow&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="200" height="20"></iframe>
+        <a href="https://twitter.com/share" class="twitter-share-button"
+           data-via="wongatech">Tweet</a>
+        <script>!function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, 'script', 'twitter-wjs');</script>
+
+        <a href="https://twitter.com/wongatech"
+           class="twitter-follow-button" data-show-count="false">Follow
+            @wongatech</a>
+        <script>!function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, 'script', 'twitter-wjs');</script>
+    </p>
+</div>
+
+<div class="row marketing">
+    <div class="col-lg-6 small">
+        <div class="page-header"><h4>Mocks</h4></div>
+
+        <h5 class="text-muted">Single Mock</h5>
+
+        <iframe style="width:100%; height: 270px;" src="mocks/Single/single.json"></iframe>
+
+        <h5 class="text-muted">Multiple Mock</h5>
+
+        <iframe style="width:100%; height: 575px;" src="mocks/Multiple/multiple.json"></iframe>        
+
+        <h5 class="text-muted">Contributing</h5>
+
+        <p>We <span style="color: red">&hearts;</span> pull requests!</p>
+
+        <p>
+            To contribute:
+        </p>
+        <ul>
+            <li>Fork the repo</li>
+            <li>Run npm install</li>
+            <li>Run bower install</li>
+            <li>Run grunt workflow:dev to watch for changes, lint, build and
+                run tests as you're working</li>
+            <li>Write your unit tests for your change</li>
+            <li>Run grunt package to update the distribution files</li>
+            <li>Check that the demo app works (acceptance tests to be
+                added)
+            </li>
+            <li>Update README.md and, if necessary, the demo page</li>
+        </ul>
+    </div>
+
+    <div class="col-lg-6" ng-app="demo" ng-controller="demoCtrl">
+        <div class="page-header"><h4>Demo</h4></div>
+
+        <p class="bs-example">
+            <button class="btn btn-primary" ng-click="makeRequest('Single')">
+                Call Single Mock
+            </button>
+
+            <button class="btn btn-info" ng-click="makeRequest('Multiple')">
+                Call Multiple Mock
+            </button>
+        </p>
+
+        <div class="log"><pre>Hit the buttons above to see what is returned.</pre></div>
+
+    </div>
+</div>
+<div class="footer text-center small" style="margin:20px;">
+    <p>© Wonga 2014 -
+        <a href="http://tech.wonga.com" role="button">
+            Wonga tech website
+        </a>
+    </p>
+</div>
+</div>
+
+</body>
+</html>

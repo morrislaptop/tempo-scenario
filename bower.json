@@ -1,0 +1,25 @@
+{
+  "name": "tempo-scenario-demo",
+  "version": "0.2.0",
+  "homepage": "https://github.com/morrislaptop/tempo-scenario",
+  "authors": [
+    "morrislaptop <craig.michael.morris@gmail.com>"
+  ],
+  "description": "Demo for Tempo Scenario",
+  "license": "MIT",
+  "devDependencies": {
+    "tempo-scenario": "git@github.com:morrislaptop/tempo-scenario.git#queue-response",
+    "angular-mocks": "~1.2.24"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/src/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.11"
+  }
+}
